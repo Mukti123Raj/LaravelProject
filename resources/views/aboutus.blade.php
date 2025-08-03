@@ -1,14 +1,8 @@
-<html>
-    <body>
-        <h1>About Us</h1>
-        <p>This is the about us page.</p>
-        <h2>Name: {{request()->name}}</h2>
-        <h2>ID: {{request()->id}}</h2>
+@extends('layouts.app')
 
-        @include('SubViews.Input', ['placeholder' => 'Enter your name'])
-        @for($i=0; $i < 10; $i++) @if($i==5) @continue @endif
-        <p>{{ $i }}</p>
+@section('content')
+    <h1>About Us</h1>
+    <p>This is the about us page.</p>
+    <p>Id is {{ $id }} and name is {{ $name }}</p>
 
-        @endfor
-    </body>
-</html>
+@endsection
