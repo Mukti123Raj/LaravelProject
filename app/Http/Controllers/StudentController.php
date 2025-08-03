@@ -37,4 +37,28 @@ class StudentController extends Controller
         $item->delete();
         return "Deleted Data Successfully";
     }
+
+    public function whereConditions(){
+        // $items= Student::where('age', '>', 23)
+        // ->orWhere('score', '>', 80)->get();
+
+
+        // $items= Student::where('score','>',90)
+        // ->where(function($query){
+        //     $query->where('age', '<', 21)
+        //     ->orWhere('age', '>', 23);
+        // })->get();
+
+        // $items= Student::whereBetween('age', [21,23])->get();
+
+        // $items= Student::whereNotBetween('age', [21,23])->get();
+
+        // $items= Student::whereIn('id', [1,2,3,4,5,6,7])->get();
+
+        // $items= Student:: whereAny(['age', 'score'], '=', 23)->get();
+
+        $items= Student:: whereAll(['age', 'score'], '=', 22)->get();
+
+        return $items;
+    }
 }
